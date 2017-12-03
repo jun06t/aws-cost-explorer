@@ -15,11 +15,22 @@ Create docker image.
 $ docker build -t aws-cost-explorer .
 ```
 
-Then run docker container.
+Then run docker container with some environmental variables.
 ```
+$ docker run --name cost_explorer \
+ -e ACCOUNT_ID=wwwwwwwwww \
+ -e USERNAME=xxxxxxxxxxxx \
+ -e PASSWORD=yyyyyyyyyyyy \
+ -e TARGET_DATE=1 \
+ -e WEBHOOK_URL=https://hooks.slack.com/services/xxxxxxx/yyyyyyyyyy/zzzzzzzzzzzzzzzzzzzzzzzzz \
+ aws-cost-explorer
 ```
 
-You should set the following environmental variables.
+After that you'll get the following message.
+
+Click the link, and you'll go to the cost explorer page.
+
+### Environmental variable
 
 |variable|description|
 |---|---|
