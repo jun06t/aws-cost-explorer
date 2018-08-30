@@ -37,6 +37,10 @@ print('move cost report dashboard')
 driver.get("https://console.aws.amazon.com/cost-reports/home?#/savedReports")
 sleep(3)
 
+# skip tutorial
+print('skip tutorial')
+driver.execute_script("localStorage.setItem('aws-cost-explorer-hasSeenTutorial', true)")
+
 print('move saved report')
 driver.find_element_by_link_text('Monthly costs by service').click()
 sleep(3)
